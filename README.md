@@ -75,7 +75,25 @@ The **test set is 97 clips from 11 signers who are not in the training data**.
 
 With 97 test clips, one clip is about 1 %, so the four models perform within one or two clips of each other. The
 remaining errors are between signs that really are similar: *sorry* → *please* (the same circular movement on the
-chest, with a different handshape). Cross-dataset results on our own webcam recordings are still to come.
+chest, with a different handshape).
+
+### Cross-dataset: trained on ASL Citizen, tested on our own laptop webcam
+
+The test signer is not in ASL Citizen. Their own clips were recorded with `src/collect_data.py`, 10 per sign.
+
+| Training data | Test clips | Accuracy | Macro-F1 |
+|---|---|---|---|
+| ASL Citizen only (zero-shot on a new person and camera) | 80 | 95.0 % | 0.947 |
+| ASL Citizen + **3 own clips per sign** (fine-tuning) | 56 | **100 %** | **1.000** |
+
+Model: LSTM with velocity features. With no training data from this person or camera, 76 of 80 clips are already correct.
+All 4 errors are *yes* clips, misread as *I love you* (3) or *hello* (1). *Yes* is a closed fist, and MediaPipe tracks
+closed fists least reliably: the same was seen with the fist letters M, N, A and E, and with the many *yes* clips the
+recorder discarded because no hand was detected. Adding just 3 of the signer's own clips per sign fixed every error.
+
+*Caveats:* the test sets are small (on 56 clips, 100 % means the true error rate is very likely below about 5 %). The
+fine-tuning and test clips also come from the same recording session (same lighting and background), so the 100 %
+is an optimistic estimate.
 
 ## Setup
 
@@ -139,8 +157,9 @@ docs/prototypes.md      history of the earlier prototypes and lessons learned
 - [x] Mirror augmentation (fixes left/right-pointing letters such as H)
 - [ ] Webcam calibration data + webcam test set for the alphabet
 - [x] ASL Citizen importer, dominant-hand normalisation, cross-dataset splits
-- [ ] Import ASL Citizen signs, record own test clips, train LSTM / GRU / 1D-CNN
-- [ ] Cross-dataset experiment: public only vs + fine-tuning on own clips
+- [x] Import ASL Citizen signs, record own test clips, train LSTM / GRU / 1D-CNN
+- [x] Cross-dataset experiment: public only vs + fine-tuning on own clips
+- [ ] More test signers (friends) for a stronger signer-independent webcam result
 - [ ] Pixel baselines (small CNN, MobileNetV2) for the pixels-vs-keypoints comparison
 - [ ] Automatic SPELL/WORD switching based on hand motion
 - [ ] TFLite export and a web demo
