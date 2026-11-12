@@ -1,0 +1,27 @@
+# Python / environments
+__pycache__/
+*.pyc
+.venv/
+venv/
+env/
+SignLang/
+signlang_env/
+.ipynb_checkpoints/
+
+# Data (keep folder structure only)
+data/*
+!data/.gitkeep
+*.zip
+
+# MediaPipe model (downloaded automatically)
+models/*.task
+
+# Secrets / personal files
+cookies.txt
+*.env
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

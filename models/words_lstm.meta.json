@@ -1,0 +1,15 @@
+{
+  "task": "words",
+  "labels": [
+    "hello",
+    "thanks",
+    "yes",
+    "no",
+    "iloveyou",
+    "please",
+    "sorry",
+    "help"
+  ],
+  "sequence_length": 30,
+  "velocity": true
+}

@@ -1,0 +1,10 @@
+# Python 3.10 - 3.12 recommended
+mediapipe>=0.10.14        # hand landmarks (also installs OpenCV)
+tensorflow>=2.16          # Keras 3 models
+numpy
+pandas
+scikit-learn
+matplotlib
+pyyaml
+pyttsx3                   # text-to-speech (optional)
+remotezip                 # partial download of the ASL Citizen zip

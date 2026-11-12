@@ -1,0 +1,17 @@
+words_lstm_aslc_vel
+accuracy=0.9897  macro_f1=0.9900  latency_ms=3.36
+
+              precision    recall  f1-score   support
+
+       hello      1.000     1.000     1.000        14
+      thanks      0.923     1.000     0.960        12
+         yes      1.000     1.000     1.000        10
+          no      1.000     1.000     1.000        11
+    iloveyou      1.000     1.000     1.000        12
+      please      1.000     1.000     1.000        13
+       sorry      1.000     1.000     1.000        12
+        help      1.000     0.923     0.960        13
+
+    accuracy                          0.990        97
+   macro avg      0.990     0.990     0.990        97
+weighted avg      0.990     0.990     0.990        97

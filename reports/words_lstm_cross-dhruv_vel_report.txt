@@ -1,0 +1,17 @@
+words_lstm_cross-dhruv_vel
+accuracy=0.9500  macro_f1=0.9465  latency_ms=8.49
+
+              precision    recall  f1-score   support
+
+       hello      0.909     1.000     0.952        10
+      thanks      1.000     1.000     1.000        10
+         yes      1.000     0.600     0.750        10
+          no      1.000     1.000     1.000        10
+    iloveyou      0.769     1.000     0.870        10
+      please      1.000     1.000     1.000        10
+       sorry      1.000     1.000     1.000        10
+        help      1.000     1.000     1.000        10
+
+    accuracy                          0.950        80
+   macro avg      0.960     0.950     0.946        80
+weighted avg      0.960     0.950     0.946        80
